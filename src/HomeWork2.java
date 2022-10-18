@@ -20,14 +20,14 @@ public class HomeWork2 {
         int x1 = 3, y1 = 3, x2 = 5, y2 = 2;
         int dx1 = Math.abs(x2 - x1);
         int dx2 = Math.abs(y2 - y1);
-        boolean horse = (dx1 == 2 && dx2 == 1 || dx1 == 1 && dx2 == 2);
+        boolean horse = dx1 == 2 && dx2 == 1 || dx1 == 1 && dx2 == 2;
         System.out.println(horse);
 
         //Может ли король переместиться с первой на вторую клетку
-        int x11 = 3, y11 = 3, x21 = 4, y21 = 3;
+        int x11 = 3, y11 = 3, x21 = 4, y21 = 7;
         int dx11 = Math.abs(x21 - x11);
         int dx21 = Math.abs(y21 - y11);
-        boolean king = (dx11 == 1 && dx21 == 0 || dx11 == 0 && dx21 == 1 || dx11 == 1 && dx21 == 1);
+        boolean king = dx11 == 1 && dx21 == 0 || dx11 == 0 && dx21 == 1 || dx11 == 1 && dx21 == 1;
         System.out.println(king);
     }
 
