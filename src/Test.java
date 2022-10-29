@@ -18,14 +18,22 @@ public class Test {
             }
             System.out.println();
         }
-
+/*2. Номиналы белорусских монет: 1,2,5,10,20,50.
+Дана сумма сдачи: 51..99 копеек.
+Выдать сдачу минимальным количеством монет.*/
+        System.out.println("Введите сумму сдачи:");
+        Scanner scanner1 = new Scanner(System.in);
+        int sumCoins = scanner1.nextInt();
+        int[] smallCoin = {1, 2, 5, 10, 20, 50};
+        for (int i = 5; i >= 0; i--) {
+            if (sumCoins >= smallCoin[i]) {
+                System.out.println(smallCoin[i]);
+                sumCoins -= smallCoin[i];
+                if (sumCoins >= smallCoin[i])
+                    i++;
+            }
+        }
     }
 }
-
-
-
-
-
-
 
 
