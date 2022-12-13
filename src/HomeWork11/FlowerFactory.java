@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class FlowerFactory {
+
     public static void main(String[] args) {
 
         Rose rose1 = new Rose("Роза Красная", "red", 6, 4, 70);
@@ -38,6 +39,8 @@ public class FlowerFactory {
         System.out.println();
         bouquet.sortBouquet();
 
+        System.out.println();
+        bouquet.findStemLength(40,60);
     }
 }
 
@@ -163,6 +166,7 @@ class Bouquet {
     private double price;
 
     List<Object> bouquetFlowers = new ArrayList<>();
+    List<Object> freshFlowers;
 
     public Bouquet addFlower(Flower flower) {
         bouquetFlowers.add(flower);
@@ -187,7 +191,7 @@ class Bouquet {
 
     public void sortBouquet() {
 
-        List<Object> freshFlowers = new ArrayList<>();
+        freshFlowers = new ArrayList<>();
         for (int i = 0; i < bouquetFlowers.size(); i++) {
 
             if (bouquetFlowers.get(i) instanceof Flower) {
@@ -212,7 +216,7 @@ class Bouquet {
         for (Object obj : freshFlowers) {
             System.out.println(obj);
         }
-        
+
 
     }
 
@@ -223,5 +227,14 @@ class Bouquet {
         }
         System.out.println("-----------------------");
         System.out.println("Стоимость букета" + " - " + price + " руб.");
+    }
+
+    public void findStemLength(int minLength, int maxLength) {
+        System.out.println("Цветок в букете, соответствующий заданному диапазону длин стеблей: ");
+        for (Object obj : freshFlowers) {
+            Flower fl = (Flower) obj;
+if(fl.getStemLength()>=minLength & fl.getStemLength()<=maxLength)
+    System.out.println(fl.getName()+" "+fl.getStemLength()+" см.");
+        }
     }
 }
